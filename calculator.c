@@ -1,4 +1,5 @@
 #include "stack.h"
+#include <string.h>
 
 int main(int argc, char **argv)
 {
@@ -9,7 +10,7 @@ int main(int argc, char **argv)
     {
         if (!atoi(argv[i]))
         {
-            if (argv[i][0] == '+')
+            if (!strcmp(argv[i], "+"))
             {
                 buffer = peek();
                 pull();
@@ -17,7 +18,7 @@ int main(int argc, char **argv)
                 pull();
                 push(buffer2 + buffer);
             }
-            if (argv[i][0] == '-')
+            if (!strcmp(argv[i], "-"))
             {
                 buffer = peek();
                 pull();
@@ -25,8 +26,7 @@ int main(int argc, char **argv)
                 pull();
                 push(buffer2 - buffer);
             }
-            if (argv[i][0] == '*')
-                /*Sounds good, doesn't work*/
+            if (!strcmp(argv[i], argv[0]))
             {
                 buffer = peek();
                 pull();
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
                 pull();
                 push(buffer2 * buffer);
             }
-            if (argv[i][0] == '/')
+            if (!strcmp(argv[i], "/"))
             {
                 buffer = peek();
                 pull();
