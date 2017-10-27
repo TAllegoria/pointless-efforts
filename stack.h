@@ -24,6 +24,7 @@ int push(int input) {
   } else {
     printf("SiF (%d)\n\n", input);
   }
+  return 0;
 }
 
 int pull() {
@@ -33,6 +34,7 @@ int pull() {
   }
   stack[999] = 0;
   stackCounter--;
+  return 0;
 }
 
 int peek() {
