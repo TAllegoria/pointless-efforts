@@ -13,7 +13,7 @@ int isFull() {
   }
 }
 
-int push(int input) {
+void push(int input) {
   int i;
   if (!isFull()) {
     for (i = 999; i > 0; i--) {
@@ -24,17 +24,15 @@ int push(int input) {
   } else {
     printf("SiF (%d)\n\n", input);
   }
-  return 0;
 }
 
-int pull() {
+void pull() {
   int i;
   for (i = 0; i < 999; i++) {
     stack[i] = stack[i + 1];
   }
   stack[999] = 0;
   stackCounter--;
-  return 0;
 }
 
 int peek() {
