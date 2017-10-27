@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 
-int *stack[1000];
+int stack[1000];
 int stackCounter = 0;
 
 int isFull() {
