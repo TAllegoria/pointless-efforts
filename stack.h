@@ -19,7 +19,7 @@ void push(int input) {
     for (i = 999; i > 0; i--) {
       stack[i] = stack[i - 1];
     }
-    stack[0] = (int*)input;
+    stack[0] = input;
     stackCounter++;
   } else {
     printf("SiF (%d)\n\n", input);
