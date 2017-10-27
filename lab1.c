@@ -53,7 +53,7 @@ main(int argc, char **argv)
             printf("%0.2f C:\n%0.2f F\n%0.2f K\n\n", C, F, K);
         }
         else
-            printf("%0.2f C:\nInput is below the absolute zero\n\n");
+            printf("%0.2f C:\nInput is below the absolute zero\n\n", C);
 
         F = atof(argv[1]);
         if (F >= -459.67)
@@ -63,7 +63,7 @@ main(int argc, char **argv)
             printf("%0.2f F:\n%0.2f C\n%0.2f K\n\n", F, C, K);
         }
         else
-            printf("%0.2f F:\nInput is below the absolute zero\n\n");
+            printf("%0.2f F:\nInput is below the absolute zero\n\n", F);
 
         K = atof(argv[1]);
         if (K >= 0.0)
@@ -73,7 +73,7 @@ main(int argc, char **argv)
             printf("%0.2f K:\n%0.2f C\n%0.2f F\n\n", K, C, F);
         }
         else
-            printf("%0.2f K:\nInput is below the absolute zero\n");
+            printf("%0.2f K:\nInput is below the absolute zero\n", K);
     }
     return 0;
 }
