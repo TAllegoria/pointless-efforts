@@ -1,0 +1,12 @@
+int N,
+    i,
+    array[i],
+    count;
+bool unsorted = истинно;
+Пока unsorted истинно
+	unsorted = ложно;
+	для каждого элемента массива от 1 до N - 1
+		если array[i] больше array[i + 1]
+			unsorted = истинно;
+			count++;
+			поменять array[i] и array[i + 1] местами;
