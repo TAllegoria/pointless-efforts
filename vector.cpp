@@ -4,6 +4,8 @@ main(){
 	int option = 0;
 	double x, y, scalar;
 	char answer = 'n';
+	Vector* a = new Vector(0, 0);
+	Vector* b = new Vector(0, 0);
 	cout << "Simple arithmetic operations with vectors. Please choose an option:" << endl;
 	do
 	{
@@ -23,16 +25,17 @@ main(){
 		cin >> x;
 		cout << "Enter y coordinate of the vector: ";
 		cin >> y;
-		Vector a(x, y);
+		a -> setX(x);
+		a -> setY(y);
 		cout << "Your vector is ";
-		a.print(); cout << endl;
+		a->print(); cout << endl;
 		if (option == 1)
 		{
 			cout << "Enter scalar: ";
 			cin >> scalar;
-			a.scalarMultiplication(scalar);
+			a->scalarMultiplication(scalar);
 			cout << "The result is ";
-			a.print(); cout << endl;
+			a->print(); cout << endl;
 		}
 		else
 		{
@@ -40,26 +43,29 @@ main(){
 			cin >> x;
 			cout << "Enter the second vector's y coordinate: ";
 			cin >> y;
-			Vector b(x, y);
+			b->setX(x);
+			b->setY(y);
+			cout << "Your second vector is ";
+			b->print(); cout << endl;
 			switch(option)
 			{
 			case 2:
 				{
-					a.addition(b);
+					a->addition(b);
 					cout << "The result is ";
-					a.print(); cout << endl;
+					a->print(); cout << endl;
 					break;
 				}
 			case 3:
 				{
-					a.subtraction(b);
+					a->subtraction(b);
 					cout << "The result is ";
-					a.print(); cout << endl;
+					a->print(); cout << endl;
 					break;
 				}
 			case 4:
 				{
-					x = a.dotProduct(b);
+					x = a->dotProduct(b);
 					cout << "The result is " << x << endl;
 					break;
 				}
@@ -75,5 +81,7 @@ main(){
 				cout << "Invalid input. Please try again" << endl;
 		}
 	} while (answer == 'Y' || answer == 'y');
+	delete a;
+	delete b;
 	return 0;
 }
