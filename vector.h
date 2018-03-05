@@ -26,6 +26,16 @@ public:
 		return y;
 	}
 
+	void setX(double X)
+	{
+		x = X;
+	}
+	
+	void setY(double Y)
+	{
+		y = Y;
+	}
+	
 	void print()
 	{
 		cout << "(" << x << "; " << y << ")";
@@ -37,21 +47,21 @@ public:
 		y *= scalar;
 	}
 
-	void addition(Vector secondTerm)
+	void addition(Vector* secondTerm)
 	{
-		x += secondTerm.getX();
-		y += secondTerm.getY();
+		x += secondTerm->getX();
+		y += secondTerm->getY();
 	}
 
-	void subtraction(Vector subtrahend)
+	void subtraction(Vector* subtrahend)
 	{
-		x -= subtrahend.getX();
-		y -= subtrahend.getY();
+		x -= subtrahend->getX();
+		y -= subtrahend->getY();
 	}
 
-	double dotProduct(Vector multiplier)
+	double dotProduct(Vector* multiplier)
 	{
-		return x * multiplier.getX() + y * multiplier.getY();
+		return x * multiplier->getX() + y * multiplier->getY();
 	}
 };
 
