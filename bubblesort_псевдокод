@@ -1,6 +1,6 @@
 int N,
     i,
-    array[i],
+    array[N],
     count;
 bool unsorted = истинно;
 Пока unsorted истинно
