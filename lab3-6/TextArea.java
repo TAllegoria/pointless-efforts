@@ -2,22 +2,22 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class LabExample extends JFrame
+class TextArea extends JFrame
 {
     JTextArea jta1 = new JTextArea();
     JMenuBar menuBar = new JMenuBar();
-    JMenu colorMenu = new JMenu("Р¦РІРµС‚ С‚РµРєСЃС‚Р°");
-    JMenuItem blueMenu = new JMenuItem("РЎРёРЅРёР№");
-    JMenuItem redMenu = new JMenuItem("РљСЂР°СЃРЅС‹Р№");
-    JMenuItem blackMenu = new JMenuItem("Р§С‘СЂРЅС‹Р№");
-    JMenu fontMenu = new JMenu("РЁСЂРёС„С‚ С‚РµРєСЃС‚Р°");
+    JMenu colorMenu = new JMenu("Цвет текста");
+    JMenuItem blueMenu = new JMenuItem("Синий");
+    JMenuItem redMenu = new JMenuItem("Красный");
+    JMenuItem blackMenu = new JMenuItem("Чёрный");
+    JMenu fontMenu = new JMenu("Шрифт текста");
     JMenuItem timesMenu = new JMenuItem("Times New Roman");
     JMenuItem sansMenu = new JMenuItem("MS Sans Serif");
     JMenuItem courierMenu = new JMenuItem("Courier New");
     Font timesFont = new Font("Times new roman", Font.PLAIN,14);
     Font sansFont = new Font("MS Sans Serif", Font.PLAIN, 14);
     Font courierFont = new Font("Courier New", Font.PLAIN, 14);
-    LabExample() {
+    TextArea() {
         super("Color and font");
         setLayout(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -78,6 +78,6 @@ class LabExample extends JFrame
 
     public static void main(String[]args)
     {
-        new LabExample();
+        new TextArea();
     }
 }
