@@ -1,5 +1,3 @@
-package com.studentinc;
-
 import java.lang.*;
 
 class Main
