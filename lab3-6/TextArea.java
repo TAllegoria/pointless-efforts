@@ -6,11 +6,11 @@ class TextArea extends JFrame
 {
     JTextArea jta1 = new JTextArea();
     JMenuBar menuBar = new JMenuBar();
-    JMenu colorMenu = new JMenu("Цвет текста");
-    JMenuItem blueMenu = new JMenuItem("Синий");
-    JMenuItem redMenu = new JMenuItem("Красный");
-    JMenuItem blackMenu = new JMenuItem("Чёрный");
-    JMenu fontMenu = new JMenu("Шрифт текста");
+    JMenu colorMenu = new JMenu("Р¦РІРµС‚ С‚РµРєСЃС‚Р°");
+    JMenuItem blueMenu = new JMenuItem("РЎРёРЅРёР№");
+    JMenuItem redMenu = new JMenuItem("РљСЂР°СЃРЅС‹Р№");
+    JMenuItem blackMenu = new JMenuItem("Р§С‘СЂРЅС‹Р№");
+    JMenu fontMenu = new JMenu("РЁСЂРёС„С‚ С‚РµРєСЃС‚Р°");
     JMenuItem timesMenu = new JMenuItem("Times New Roman");
     JMenuItem sansMenu = new JMenuItem("MS Sans Serif");
     JMenuItem courierMenu = new JMenuItem("Courier New");
