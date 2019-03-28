@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import static java.lang.Math.*;
 
-//todo ПРОВЕРКА НА ДУРАКА И ЗАДАНИЕ б)
+//todo ЗАДАНИЕ б)
 
 public class RPP_lab43 extends JFrame {
 
@@ -20,7 +20,8 @@ public class RPP_lab43 extends JFrame {
         super("Вычисление значения функции");
         setLayout(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(350, 250);
+        setSize(350, 550);
+        setLocationRelativeTo(null);
 
         JLabel aLabel = new JLabel("a");
         aLabel.setBounds(10, 5, 25, 20);
@@ -51,7 +52,7 @@ public class RPP_lab43 extends JFrame {
         add(xText);
 
         JLabel yLabel = new JLabel("y = ");
-        yLabel.setBounds(10, 167, 25, 20);
+        yLabel.setBounds(10, 168, 25, 20);
         add(yLabel);
         JLabel yText = new JLabel(" ");
         yText.setBounds(30, 169, 93, 20);
@@ -64,10 +65,53 @@ public class RPP_lab43 extends JFrame {
         add(clclt);
         clclt.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                yText.setText(String.valueOf(formatter.format(Formula(Double.parseDouble(aText.getText()), Double.parseDouble(bText.getText()),  Double.parseDouble(cText.getText()), Double.parseDouble(xText.getText())))));
+            public void actionPerformed(ActionEvent a) {
+                try {
+                    yText.setText(String.valueOf(formatter.format(Formula(Double.parseDouble(aText.getText()), Double.parseDouble(bText.getText()), Double.parseDouble(cText.getText()), Double.parseDouble(xText.getText())))));
+                } catch (Exception e) {
+                    JOptionPane error = new JOptionPane();
+                    error.showMessageDialog(RPP_lab43.super.rootPane, "Некорректные данные, введите правильно значения переменных!" );
+                    yText.setText(" ");
+                }
             }
         });
+
+        //задание б)
+
+        JLabel xStartLabel = new JLabel("x начальное");
+        xStartLabel.setBounds(10, 205, 80, 20);
+        add(xStartLabel);
+        JTextField xStartText = new JTextField();
+        xStartText.setBounds(10, 227, 75, 20);
+        add(xStartText);
+
+        JLabel xEndLabel = new JLabel("x конечное");
+        xEndLabel.setBounds(105, 205, 80, 20);
+        add(xEndLabel);
+        JTextField xEndText = new JTextField();
+        xEndText.setBounds(105, 227, 75, 20);
+        add(xEndText);
+
+        JLabel stepLabel = new JLabel("шаг");
+        stepLabel.setBounds(200, 205, 80, 20);
+        add(stepLabel);
+        JTextField stepText = new JTextField();
+        stepText.setBounds(200, 227, 75, 20);
+        add(stepText);
+
+        JButton tableBttn = new JButton("Вывести таблицу значений");
+        tableBttn.setBounds(10, 260, 315, 30);
+        add(tableBttn);
+
+        JTextArea table = new JTextArea();
+        add(table);
+        JScrollPane tableScroll = new JScrollPane(table,
+                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        tableScroll.setBounds(10, 300, 315, 200);
+        add(tableScroll);
+
+        
 
         setVisible(true);
     }
