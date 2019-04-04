@@ -6,8 +6,6 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import static java.lang.Math.*;
 
-//todo ЗАДАНИЕ б)
-
 public class RPP_lab43 extends JFrame {
 
     public double Formula(double a, double b, double c, double x) {
@@ -20,8 +18,10 @@ public class RPP_lab43 extends JFrame {
         super("Вычисление значения функции");
         setLayout(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(350, 550);
+        setSize(450, 550);
         setLocationRelativeTo(null);
+
+        //задание а)
 
         JLabel aLabel = new JLabel("a");
         aLabel.setBounds(10, 5, 25, 20);
@@ -100,18 +100,37 @@ public class RPP_lab43 extends JFrame {
         add(stepText);
 
         JButton tableBttn = new JButton("Вывести таблицу значений");
-        tableBttn.setBounds(10, 260, 315, 30);
+        tableBttn.setBounds(10, 260, 415, 30);
         add(tableBttn);
 
         JTextArea table = new JTextArea();
+        table.setEnabled(false);
+        table.setDisabledTextColor(Color.black);
         add(table);
         JScrollPane tableScroll = new JScrollPane(table,
                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        tableScroll.setBounds(10, 300, 315, 200);
+        tableScroll.setBounds(10, 300, 415, 200);
         add(tableScroll);
 
-        
+        tableBttn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent aT) {
+                String tableString;
+                try {
+                    tableString = "a" + (char)9 + "b" + (char)9 + "c" + (char)9 + "x" + (char)9 + "y" + (char)10; //(char)9 -- табуляция, (char)10 -- перевод строки
+                    for (double x = Double.parseDouble(xStartText.getText()); x <= Double.parseDouble(xEndText.getText()); x += Double.parseDouble(stepText.getText())) {
+                        tableString += aText.getText() + (char)9 + bText.getText() + (char)9 + cText.getText() + (char)9 + x + (char)9
+                                + String.valueOf(formatter.format(Formula(Double.parseDouble(aText.getText()), Double.parseDouble(bText.getText()), Double.parseDouble(cText.getText()), x))) + (char)10;
+                    }
+                    table.setText(tableString);
+                } catch (Exception eT) {
+                    JOptionPane error = new JOptionPane();
+                    error.showMessageDialog(RPP_lab43.super.rootPane, "Некорректные данные, введите правильно значения переменных!" );
+                    table.setText(" ");
+                }
+            }
+        });
 
         setVisible(true);
     }
